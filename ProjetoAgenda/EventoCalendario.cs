@@ -29,14 +29,9 @@ namespace ProjetoAgenda
 
           //Resolvi porco, mas resolvi
           // Ao abrir tela evento já recebe a data no campo txtData com o valor do campo
-            if(Convert.ToInt32(ControleUsuarioDias.static_dias) < 10)
-            {
-                txtData.Text = 0+ControleUsuarioDias.static_dias + "/" + Calendario.static_mes + "/" + Calendario.static_ano;
-            }
-            else
-            {
+ 
                 txtData.Text = ControleUsuarioDias.static_dias + "/" + Calendario.static_mes + "/" + Calendario.static_ano;
-            }
+            
             
         }
 

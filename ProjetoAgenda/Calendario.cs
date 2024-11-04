@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ProjetoAgenda
 {
@@ -71,25 +72,32 @@ namespace ProjetoAgenda
             //limpar Campos
             FlowLayDias.Controls.Clear();
             //incrementar o mês para ir para o próximo mês
-            mes++;
 
+            mes++;
+           
             //declarar métodos estáticos recebendo mes e ano
             static_mes = mes;
             static_ano = ano;
+
+
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual
             string nomeDoMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
+            
+            
             lblData.Text = nomeDoMes + " " + ano;
 
             DateTime diasDoMes = new DateTime(ano, mes, 1);
 
             // Pega a contagem dos dias de um mês
             int dias = DateTime.DaysInMonth(ano, mes);
+            
 
             //Converte o diasDoMes para interagir com dias da semana
             int diasDaSemana = Convert.ToInt32(diasDoMes.DayOfWeek.ToString("d"));
 
-            //Primeiro crie o controle do usuário
 
+
+            //Primeiro crie o controle do usuário
             for (int i = 1; i < diasDaSemana; i++)
             {
                 ControleUsuarioVazio UCVazio = new ControleUsuarioVazio();
@@ -110,9 +118,10 @@ namespace ProjetoAgenda
         #region Métodos Privados
         private void PainelHoras()
         {
+
             // Instanciando Datetime, para usar métodos desta classe
             DateTime data = DateTime.Now;
-
+            
             // Dando valores para as variáveis globais, utilizar também no nome do mês e ano, mantém as informações para a troca quando clickado anterior ou próximo
             mes = data.Month;
             ano = data.Year;
@@ -132,12 +141,7 @@ namespace ProjetoAgenda
             //Converte o diasDoMes para interagir com dias da semana
             int diasDaSemana = Convert.ToInt32(diasDoMes.DayOfWeek.ToString("d"));
 
-            //MessageBox.Show(Convert.ToString(diasDoMes));
-            //converter valores para PT-BR
-           
-
             //Primeiro crie o controle do usuário
-
             for (int i = 1; i < diasDaSemana; i++)
             {
                 ControleUsuarioVazio UCVazio = new ControleUsuarioVazio();
@@ -151,6 +155,7 @@ namespace ProjetoAgenda
                 ucDias.ContaDias(i);
                 FlowLayDias.Controls.Add(ucDias);
             }
+
         }
         #endregion
     }
