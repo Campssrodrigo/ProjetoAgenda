@@ -26,12 +26,12 @@ namespace ProjetoAgenda
 
         private void EventoCalendario_Load(object sender, EventArgs e)
         {
-
-          //Resolvi porco, mas resolvi
+            
+          
           // Ao abrir tela evento já recebe a data no campo txtData com o valor do campo
  
                 txtData.Text = ControleUsuarioDias.static_dias + "/" + Calendario.static_mes + "/" + Calendario.static_ano;
-            
+                
             
         }
 

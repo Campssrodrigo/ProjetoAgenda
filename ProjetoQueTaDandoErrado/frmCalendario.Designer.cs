@@ -32,7 +32,7 @@
             this.FlpCalendario = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMesAno = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             this.btnProximo.Size = new System.Drawing.Size(74, 39);
             this.btnProximo.TabIndex = 0;
             this.btnProximo.UseVisualStyleBackColor = false;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnAnterior
             // 
@@ -70,15 +71,15 @@
             this.btnAnterior.TabIndex = 0;
             this.btnAnterior.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lblMesAno
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(418, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mês e Ano";
+            this.lblMesAno.AutoSize = true;
+            this.lblMesAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMesAno.Location = new System.Drawing.Point(418, 12);
+            this.lblMesAno.Name = "lblMesAno";
+            this.lblMesAno.Size = new System.Drawing.Size(158, 36);
+            this.lblMesAno.TabIndex = 0;
+            this.lblMesAno.Text = "Mês e Ano";
             // 
             // label2
             // 
@@ -162,7 +163,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMesAno);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.FlpCalendario);
@@ -184,7 +185,7 @@
         private System.Windows.Forms.FlowLayoutPanel FlpCalendario;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMesAno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

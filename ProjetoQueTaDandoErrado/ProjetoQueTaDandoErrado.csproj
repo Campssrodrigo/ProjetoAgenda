@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControleDoUsuarioDias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleDoUsuarioDias.Designer.cs">
+      <DependentUpon>ControleDoUsuarioDias.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleUsuarioVazio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControleDoUsuarioDias.resx">
+      <DependentUpon>ControleDoUsuarioDias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleUsuarioVazio.resx">
       <DependentUpon>ControleUsuarioVazio.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,6 +1,6 @@
 ﻿namespace ProjetoQueTaDandoErrado
 {
-    partial class ControleUsuarioVazio
+    partial class ControleDoUsuarioDias
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,19 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblDias = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ControleUsuarioVazio
+            // lblDias
+            // 
+            this.lblDias.AutoSize = true;
+            this.lblDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDias.Location = new System.Drawing.Point(14, 13);
+            this.lblDias.Name = "lblDias";
+            this.lblDias.Size = new System.Drawing.Size(24, 17);
+            this.lblDias.TabIndex = 0;
+            this.lblDias.Text = "00";
+            // 
+            // ControleDoUsuarioDias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Name = "ControleUsuarioVazio";
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.lblDias);
+            this.Name = "ControleDoUsuarioDias";
             this.Size = new System.Drawing.Size(141, 111);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblDias;
     }
 }

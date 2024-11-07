@@ -39,6 +39,12 @@ namespace ProjetoAgenda
             mes--;
             static_mes = mes;
             static_ano = ano;
+
+            if (mes == 0)
+            {
+                ano = ano - 1;
+                mes = 12;
+            }
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual, neste caso após o click decrementando o mês
             string nomeDoMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblData.Text = nomeDoMes + " " + ano;
@@ -74,23 +80,25 @@ namespace ProjetoAgenda
             //incrementar o mês para ir para o próximo mês
 
             mes++;
-           
-            //declarar métodos estáticos recebendo mes e ano
+
             static_mes = mes;
             static_ano = ano;
 
+           if(mes == 13)
+            {
+                ano = ano + 1;
+                mes = 1;
+            }
 
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual
             string nomeDoMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
-            
-            
             lblData.Text = nomeDoMes + " " + ano;
 
             DateTime diasDoMes = new DateTime(ano, mes, 1);
 
             // Pega a contagem dos dias de um mês
             int dias = DateTime.DaysInMonth(ano, mes);
-            
+
 
             //Converte o diasDoMes para interagir com dias da semana
             int diasDaSemana = Convert.ToInt32(diasDoMes.DayOfWeek.ToString("d"));
@@ -110,6 +118,9 @@ namespace ProjetoAgenda
                 ucDias.ContaDias(i);
                 FlowLayDias.Controls.Add(ucDias);
             }
+
+            //declarar métodos estáticos recebendo mes e ano
+
         }
 
 
@@ -121,11 +132,11 @@ namespace ProjetoAgenda
 
             // Instanciando Datetime, para usar métodos desta classe
             DateTime data = DateTime.Now;
-            
+
             // Dando valores para as variáveis globais, utilizar também no nome do mês e ano, mantém as informações para a troca quando clickado anterior ou próximo
             mes = data.Month;
             ano = data.Year;
-            
+
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual
             string nomeDoMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes); //olhar como funciona
             lblData.Text = nomeDoMes + " " + ano;
@@ -146,7 +157,7 @@ namespace ProjetoAgenda
             {
                 ControleUsuarioVazio UCVazio = new ControleUsuarioVazio();
                 FlowLayDias.Controls.Add(UCVazio);
-                
+
             }
             //Repetir dias conforme o i, dias dos meses, colocar dias em todos os campos
             for (int i = 1; i <= dias; i++)
@@ -157,6 +168,11 @@ namespace ProjetoAgenda
             }
 
         }
+
+
+
+
+
         #endregion
     }
 }

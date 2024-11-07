@@ -55,6 +55,7 @@ namespace ProjetoAgenda
             string sql = "SELECT * FROM tb_calendar where data = ?";
             MySqlCommand comando = conexao.CreateCommand();
             comando.CommandText = sql;
+            // Declarar viriável que receba as informações de data e tranforme com o CultureInfo.InvariantCulture;
             comando.Parameters.AddWithValue("data", lblDias.Text + "/" + Calendario.static_mes + "/" + Calendario.static_ano);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
