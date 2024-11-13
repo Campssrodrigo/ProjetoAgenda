@@ -40,7 +40,7 @@ namespace ProjetoAgenda
           
             // começar o timer do usercontrol no click
             timer1.Start();
-            EventoCalendario eventoCalendario = new EventoCalendario();
+            frmEventoCalendario eventoCalendario = new frmEventoCalendario();
             eventoCalendario.Show();
         }
 
@@ -56,7 +56,7 @@ namespace ProjetoAgenda
             MySqlCommand comando = conexao.CreateCommand();
             comando.CommandText = sql;
             // Declarar viriável que receba as informações de data e tranforme com o CultureInfo.InvariantCulture;
-            comando.Parameters.AddWithValue("data", lblDias.Text + "/" + Calendario.static_mes + "/" + Calendario.static_ano);
+            comando.Parameters.AddWithValue("data", lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {

@@ -12,9 +12,9 @@ using System.Threading;
 
 namespace ProjetoAgenda
 {
-    public partial class Calendario : Form
+    public partial class frmCalendario : Form
     {
-        public Calendario()
+        public frmCalendario()
         {
             InitializeComponent();
         }

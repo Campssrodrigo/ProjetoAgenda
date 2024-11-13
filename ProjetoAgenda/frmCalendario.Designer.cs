@@ -1,6 +1,6 @@
 ﻿namespace ProjetoAgenda
 {
-    partial class Calendario
+    partial class frmCalendario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendario));
             this.FlowLayDias = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAlterior = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();

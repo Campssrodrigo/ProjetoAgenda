@@ -67,7 +67,7 @@ namespace ProjetoQueTaDandoErrado
             FlpCalendario.Controls.Clear();
 
             mes++;
-            MostrarCampos();
+           
            
         }
 

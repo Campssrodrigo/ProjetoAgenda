@@ -16,7 +16,7 @@ namespace ProjetoAgenda
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calendario());
+            Application.Run(new frmPrincipal());
         }
     }
 }

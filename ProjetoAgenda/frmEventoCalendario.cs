@@ -13,26 +13,23 @@ using MySql.Data.MySqlClient;
 
 namespace ProjetoAgenda
 {
-    public partial class EventoCalendario : Form
+    public partial class frmEventoCalendario : Form
     {
         //criar conexao string
         string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
        
         // Criar a base de dados usando xampp
-        public EventoCalendario()
+        public frmEventoCalendario()
         {
             InitializeComponent();
         }
 
         private void EventoCalendario_Load(object sender, EventArgs e)
         {
-            
-          
-          // Ao abrir tela evento já recebe a data no campo txtData com o valor do campo
- 
-                txtData.Text = ControleUsuarioDias.static_dias + "/" + Calendario.static_mes + "/" + Calendario.static_ano;
-                
-            
+            DateTime dataCompleta = Convert.ToDateTime(ControleUsuarioDias.static_dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+            txtData.Text = dataCompleta.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            //MessageBox.Show(data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -60,6 +57,16 @@ namespace ProjetoAgenda
             comando.Dispose();
             //Fechar a aplicação geral
             conexao.Close();
+        }
+
+        private void btnCores_Click(object sender, EventArgs e)
+        {
+           // ColorDialog colorDialog = new ColorDialog();
+           // colorDialog.ShowDialog();
+
+            new ColorDialog().ShowDialog();
+
+           
         }
     }
 }

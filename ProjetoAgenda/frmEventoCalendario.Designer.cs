@@ -1,6 +1,6 @@
 ﻿namespace ProjetoAgenda
 {
-    partial class EventoCalendario
+    partial class frmEventoCalendario
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnCores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtData
@@ -83,17 +84,28 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
-            // EventoCalendario
+            // btnCores
+            // 
+            this.btnCores.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCores.Location = new System.Drawing.Point(180, 151);
+            this.btnCores.Name = "btnCores";
+            this.btnCores.Size = new System.Drawing.Size(97, 39);
+            this.btnCores.TabIndex = 2;
+            this.btnCores.Text = "Cores";
+            this.btnCores.UseVisualStyleBackColor = true;
+            // 
+            // frmEventoCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 202);
+            this.Controls.Add(this.btnCores);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEvento);
             this.Controls.Add(this.txtData);
-            this.Name = "EventoCalendario";
+            this.Name = "frmEventoCalendario";
             this.Text = "EventoCalendario";
             this.Load += new System.EventHandler(this.EventoCalendario_Load);
             this.ResumeLayout(false);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnCores;
     }
 }
