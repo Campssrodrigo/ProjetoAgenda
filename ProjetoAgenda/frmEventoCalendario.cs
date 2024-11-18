@@ -46,6 +46,8 @@ namespace ProjetoAgenda
             //comando em texto recebendo o que inserido na variavel sql
             comando.CommandText = sql;
             //comando para receber a data no BD, bindando
+            DateTime dataCompleta = Convert.ToDateTime(ControleUsuarioDias.static_dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+            txtData.Text = dataCompleta.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             comando.Parameters.AddWithValue("data",txtData.Text);
             //comando para receber evento digitado no BD, bindando
             comando.Parameters.AddWithValue("evento", txtEvento.Text);
@@ -61,12 +63,10 @@ namespace ProjetoAgenda
 
         private void btnCores_Click(object sender, EventArgs e)
         {
-           // ColorDialog colorDialog = new ColorDialog();
-           // colorDialog.ShowDialog();
+            // ColorDialog colorDialog = new ColorDialog();
+            // colorDialog.ShowDialog();
 
             new ColorDialog().ShowDialog();
-
-           
         }
     }
 }

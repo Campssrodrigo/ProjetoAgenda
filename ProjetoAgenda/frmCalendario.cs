@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using MySql.Data.MySqlClient;
 
 namespace ProjetoAgenda
 {
@@ -19,7 +20,7 @@ namespace ProjetoAgenda
             InitializeComponent();
         }
         #region Variáveis Globais
-
+        string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
         int mes, ano;
         //criar método static para passar a informação do formulário de mês e ano
         public static int static_mes, static_ano;
@@ -84,7 +85,7 @@ namespace ProjetoAgenda
             static_mes = mes;
             static_ano = ano;
 
-           if(mes == 13)
+            if (mes == 13)
             {
                 ano = ano + 1;
                 mes = 1;
@@ -168,11 +169,6 @@ namespace ProjetoAgenda
             }
 
         }
-
-
-
-
-
         #endregion
     }
 }

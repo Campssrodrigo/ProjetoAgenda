@@ -65,6 +65,7 @@
             this.Controls.Add(this.lblDias);
             this.Name = "ControleUsuarioDias";
             this.Size = new System.Drawing.Size(145, 114);
+            this.Load += new System.EventHandler(this.ControleUsuarioDias_Load);
             this.Click += new System.EventHandler(this.ControleUsuarioDias_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
