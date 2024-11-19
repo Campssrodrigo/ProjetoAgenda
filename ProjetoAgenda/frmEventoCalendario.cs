@@ -15,15 +15,18 @@ namespace ProjetoAgenda
 {
     public partial class frmEventoCalendario : Form
     {
-        //criar conexao string
-        string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
+        
        
         // Criar a base de dados usando xampp
         public frmEventoCalendario()
         {
             InitializeComponent();
         }
+        #region Variável global
+        string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
+        #endregion
 
+        #region Eventos
         private void EventoCalendario_Load(object sender, EventArgs e)
         {
             DateTime dataCompleta = Convert.ToDateTime(ControleUsuarioDias.static_dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
@@ -31,10 +34,19 @@ namespace ProjetoAgenda
 
             //MessageBox.Show(data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
         }
+        private void btnCores_Click(object sender, EventArgs e)
+        {
+            // ColorDialog colorDialog = new ColorDialog();
+            // colorDialog.ShowDialog();
 
+            new ColorDialog().ShowDialog();
+        }
+        #endregion
+
+        #region Métodos privados
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-         
+
             //Chamar using, baixar nuGet opção
             MySqlConnection conexao = new MySqlConnection(conexaoString);
             //abrir aplicação de comandos
@@ -48,7 +60,7 @@ namespace ProjetoAgenda
             //comando para receber a data no BD, bindando
             DateTime dataCompleta = Convert.ToDateTime(ControleUsuarioDias.static_dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
             txtData.Text = dataCompleta.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-            comando.Parameters.AddWithValue("data",txtData.Text);
+            comando.Parameters.AddWithValue("data", txtData.Text);
             //comando para receber evento digitado no BD, bindando
             comando.Parameters.AddWithValue("evento", txtEvento.Text);
             //Comando que executa no banco de dados, se não estiver referenciado corretamente da erro
@@ -61,12 +73,8 @@ namespace ProjetoAgenda
             conexao.Close();
         }
 
-        private void btnCores_Click(object sender, EventArgs e)
-        {
-            // ColorDialog colorDialog = new ColorDialog();
-            // colorDialog.ShowDialog();
+        #endregion
 
-            new ColorDialog().ShowDialog();
-        }
+      
     }
 }

@@ -26,7 +26,7 @@ namespace ProjetoAgenda
         public static int static_mes, static_ano;
         #endregion
 
-        #region Compenetes de Tela
+        #region Eventos
         private void Calendario_Load(object sender, EventArgs e)
         {
             PainelHoras();

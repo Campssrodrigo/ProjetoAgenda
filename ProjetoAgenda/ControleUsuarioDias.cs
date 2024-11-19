@@ -19,19 +19,17 @@ namespace ProjetoAgenda
         // criar outro método static para dias
         public static string static_dias;
 
-        //criar conexao string
+        #region Variáveis globais
+        //criar conexao string 
         string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
+        #endregion
 
         public ControleUsuarioDias()
         {
             InitializeComponent();
         }
 
-        public void ContaDias(int numeroDias)
-        {
-            lblDias.Text = numeroDias + ""; // Aqui?? Cultura
-        }
-
+        #region Eventos
         private void ControleUsuarioDias_Click(object sender, EventArgs e)
         {
 
@@ -47,9 +45,20 @@ namespace ProjetoAgenda
         {
             displayEvent();
         }
+        #endregion
 
-        
+        #region Métodos publicos
+        /// <summary>
+        /// Conta os dias do calendário, é publico porque compartilha essa informação na tela frmCalendário, está no laço de repetição, mostra nois paineis os dias do mês
+        /// </summary>
+        /// <param name="numeroDias"></param>
+        public void ContaDias(int numeroDias)
+        {
+            lblDias.Text = numeroDias + ""; // Aqui?? Cultura
+        }
+        #endregion
 
+        #region Métodos privados
         private void displayEvent()
         {
 
@@ -65,13 +74,13 @@ namespace ProjetoAgenda
             }
             else
             {
-                comando.Parameters.AddWithValue("data", 0+lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
             }
-            
+
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
-                
+
                 //for(int i = 1; )
                 lblEvento.Text = reader["evento"].ToString();
             }
@@ -80,14 +89,14 @@ namespace ProjetoAgenda
             conexao.Close();
         }
 
-      
+
         //criar o timer para automatizar evento se novo evento for adicionado
         private void timer1_Tick(object sender, EventArgs e)
         {
             //chamar o método do evento de display
             displayEvent();
         }
+        #endregion
 
-  
     }
 }
