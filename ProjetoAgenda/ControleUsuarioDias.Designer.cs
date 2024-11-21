@@ -46,11 +46,12 @@
             // 
             // lblEvento
             // 
-            this.lblEvento.Location = new System.Drawing.Point(3, 72);
+            this.lblEvento.Location = new System.Drawing.Point(0, 29);
             this.lblEvento.Name = "lblEvento";
-            this.lblEvento.Size = new System.Drawing.Size(139, 33);
+            this.lblEvento.Size = new System.Drawing.Size(145, 85);
             this.lblEvento.TabIndex = 1;
             this.lblEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEvento.Click += new System.EventHandler(this.lblEvento_Click);
             // 
             // timer1
             // 
@@ -60,7 +61,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.Controls.Add(this.lblEvento);
             this.Controls.Add(this.lblDias);
             this.Name = "ControleUsuarioDias";

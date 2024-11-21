@@ -22,6 +22,7 @@ namespace ProjetoAgenda
         #region Variáveis globais
         //criar conexao string 
         string conexaoString = "server=localhost;user id=root;database=db_calendar;sslmode=none";
+
         #endregion
 
         public ControleUsuarioDias()
@@ -34,12 +35,18 @@ namespace ProjetoAgenda
         {
 
             static_dias = lblDias.Text;
-
-
-            // começar o timer do usercontrol no click
-            timer1.Start();
             frmEventoCalendario eventoCalendario = new frmEventoCalendario();
             eventoCalendario.Show();
+            timer1.Start();
+        }
+        private void lblEvento_Click(object sender, EventArgs e)
+        {
+            static_dias = lblDias.Text;
+
+            frmEventoCalendario eventoCalendario = new frmEventoCalendario();
+            eventoCalendario.Show();
+            timer1.Start();
+
         }
         private void ControleUsuarioDias_Load(object sender, EventArgs e)
         {
@@ -56,6 +63,10 @@ namespace ProjetoAgenda
         {
             lblDias.Text = numeroDias + ""; // Aqui?? Cultura
         }
+        public class ListaDeEventos
+        {
+            public string evento { get; set; }
+        }
         #endregion
 
         #region Métodos privados
@@ -64,6 +75,7 @@ namespace ProjetoAgenda
 
             MySqlConnection conexao = new MySqlConnection(conexaoString);
             conexao.Open();
+            //for tem que pegar também o select do banco de dados, tem que fazer a busca também
             string sql = "SELECT * FROM tb_calendar where data = ?";
             MySqlCommand comando = conexao.CreateCommand();
             comando.CommandText = sql;
@@ -77,26 +89,40 @@ namespace ProjetoAgenda
                 comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
             }
 
+            // Cria um objeto MySqlDataReader para ler os resultados da consulta SQL
             MySqlDataReader reader = comando.ExecuteReader();
-            if (reader.Read())
-            {
 
-                //for(int i = 1; )
-                lblEvento.Text = reader["evento"].ToString();
+            // Inicializa uma lista para armazenar os eventos marcados
+            List<ListaDeEventos> eventosMarcados = new List<ListaDeEventos>();
+
+            // Enquanto houver dados para serem lidos do banco de dados continua o loop
+            while (reader.Read())
+            {
+                // Cria um novo objeto ListaDeEventos e preenche o campo 'evento'
+                // com o valor da coluna correspondente no resultado da consulta
+                eventosMarcados.Add(new ListaDeEventos { evento = reader.GetString("evento") });
+            }
+            // Percorre a lista de eventos e adiciona cada evento ao label lblEvento
+            // A cada iteração, uma nova linha é adicionada ao texto da label
+            foreach (var repEvento in eventosMarcados)
+            {
+                lblEvento.Text += repEvento.evento + "\n";
             }
             reader.Dispose();
             comando.Dispose();
             conexao.Close();
+
+
         }
-
-
-        //criar o timer para automatizar evento se novo evento for adicionado
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //chamar o método do evento de display
+            lblEvento.Text = "";
             displayEvent();
         }
         #endregion
 
+
     }
+
+
 }

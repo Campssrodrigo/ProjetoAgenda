@@ -54,6 +54,7 @@
             // 
             this.txtEvento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEvento.Location = new System.Drawing.Point(16, 105);
+            this.txtEvento.MaxLength = 30;
             this.txtEvento.Name = "txtEvento";
             this.txtEvento.Size = new System.Drawing.Size(402, 26);
             this.txtEvento.TabIndex = 0;

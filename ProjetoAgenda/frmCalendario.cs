@@ -74,6 +74,7 @@ namespace ProjetoAgenda
             }
 
         }
+
         private void btnProximo_Click(object sender, EventArgs e)
         {
             //limpar Campos
