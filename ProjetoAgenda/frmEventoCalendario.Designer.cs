@@ -35,9 +35,9 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnCores = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,9 +54,9 @@
             // 
             this.txtEvento.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEvento.Location = new System.Drawing.Point(16, 105);
-            this.txtEvento.MaxLength = 30;
+            this.txtEvento.MaxLength = 55;
             this.txtEvento.Name = "txtEvento";
-            this.txtEvento.Size = new System.Drawing.Size(402, 26);
+            this.txtEvento.Size = new System.Drawing.Size(385, 26);
             this.txtEvento.TabIndex = 0;
             // 
             // label1
@@ -93,7 +93,7 @@
             // btnCores
             // 
             this.btnCores.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCores.Location = new System.Drawing.Point(282, 60);
+            this.btnCores.Location = new System.Drawing.Point(304, 63);
             this.btnCores.Name = "btnCores";
             this.btnCores.Size = new System.Drawing.Size(97, 39);
             this.btnCores.TabIndex = 2;
@@ -109,38 +109,36 @@
             this.dataGridView1.Size = new System.Drawing.Size(406, 377);
             this.dataGridView1.TabIndex = 3;
             // 
-            // button1
+            // btnAlterar
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(115, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Alterar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnAdicionar_Click);
+            this.btnAlterar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Location = new System.Drawing.Point(115, 150);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(96, 39);
+            this.btnAlterar.TabIndex = 2;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnExcluir
             // 
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(217, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 39);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnAdicionar_Click);
+            this.btnExcluir.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(217, 150);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(97, 39);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnCancelar
             // 
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(320, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnAdicionar_Click);
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(320, 150);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 39);
+            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmEventoCalendario
             // 
@@ -149,14 +147,16 @@
             this.ClientSize = new System.Drawing.Size(430, 594);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCores);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEvento);
             this.Controls.Add(this.txtData);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmEventoCalendario";
             this.Text = "EventoCalendario";
             this.Load += new System.EventHandler(this.EventoCalendario_Load);
@@ -175,8 +175,8 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnCores;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

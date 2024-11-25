@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
+using ProjetoAgenda.Classes;
 
 namespace ProjetoAgenda
 {
@@ -24,6 +25,7 @@ namespace ProjetoAgenda
         int mes, ano;
         //criar método static para passar a informação do formulário de mês e ano
         public static int static_mes, static_ano;
+        Util formtDatas = new Util();
         #endregion
 
         #region Eventos
@@ -46,6 +48,7 @@ namespace ProjetoAgenda
                 ano = ano - 1;
                 mes = 12;
             }
+
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual, neste caso após o click decrementando o mês
             string nomeDoMes = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblData.Text = nomeDoMes + " " + ano;
@@ -89,7 +92,7 @@ namespace ProjetoAgenda
             if (mes == 13)
             {
                 ano = ano + 1;
-                mes = 1;
+                mes = 01;
             }
 
             // Atualizar nome do mês a cada load de furmlário, considera data e ano atual
