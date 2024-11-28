@@ -11,14 +11,14 @@ namespace ProjetoAgenda.Classes
     public class Util
     {
 
-        public string ajudarDataPadraoBR()
+        public string ajustarDataPadraoBR()
         {
             string infoCampoData = string.Empty;
 
             if (frmCalendario.static_mes == 13)
             {
                 frmCalendario.static_mes = 1;
-                frmCalendario.static_ano = +1; 
+                frmCalendario.static_ano += +1; 
 
                 DateTime dataCompleta = Convert.ToDateTime(ControleUsuarioDias.static_dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
                 infoCampoData = dataCompleta.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);

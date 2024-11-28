@@ -45,7 +45,7 @@ namespace ProjetoAgenda
 
             if (mes == 0)
             {
-                ano = ano - 1;
+                ano += - 1;
                 mes = 12;
             }
 
@@ -91,7 +91,7 @@ namespace ProjetoAgenda
 
             if (mes == 13)
             {
-                ano = ano + 1;
+                ano += + 1;
                 mes = 01;
             }
 

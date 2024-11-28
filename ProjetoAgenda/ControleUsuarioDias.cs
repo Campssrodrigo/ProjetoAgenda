@@ -86,6 +86,9 @@ namespace ProjetoAgenda
             }
             else
             {
+                //No display do evento ele ainda trás o valor 13, Criar um método para dar o +1 e -1 em mês e ano?
+                //Outro método só para converter as datas?
+                //Seguir o método ajustarDataPadraoBR(), lá estão todos os lugares que precisam de alteração
                 comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
             }
 
@@ -96,7 +99,7 @@ namespace ProjetoAgenda
             List<ListaDeEventos> eventosMarcados = new List<ListaDeEventos>();
 
             // Enquanto houver dados para serem lidos do banco de dados continua o loop
-            while (reader.Read())
+            while (reader.Read())//Melhorar esses While, se não ele vai ficar puxando todos os compromissos sem necessidade, vai travar o programa
             {
                 // Cria um novo objeto ListaDeEventos e preenche o campo 'evento'
                 // com o valor da coluna correspondente no resultado da consulta
@@ -106,7 +109,8 @@ namespace ProjetoAgenda
             // A cada iteração, uma nova linha é adicionada ao texto da label
             foreach (var repEvento in eventosMarcados)
             {
-                lblEvento.Text += repEvento.evento + "\n";
+                lblEvento.Text += $"{repEvento.evento} \n"; 
+                
             }
             reader.Dispose();
             comando.Dispose();

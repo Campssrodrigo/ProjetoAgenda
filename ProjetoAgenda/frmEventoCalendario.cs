@@ -37,7 +37,7 @@ namespace ProjetoAgenda
         private void EventoCalendario_Load(object sender, EventArgs e)
         {
 
-            txtData.Text = convertDatas.ajudarDataPadraoBR();
+            txtData.Text = convertDatas.ajustarDataPadraoBR();
 
             //MessageBox.Show(data.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture));
         }
@@ -92,7 +92,7 @@ namespace ProjetoAgenda
                 //comando em texto recebendo o que inserido na variavel sql
                 comando.CommandText = sql;
                 //comando para receber da classe data ajustada com os valor dd/MM/yyyy
-                txtData.Text = convertDatas.ajudarDataPadraoBR();
+                txtData.Text = convertDatas.ajustarDataPadraoBR();
                 //comando para receber a data no BD, bindando
                 comando.Parameters.AddWithValue("data", txtData.Text);
                 //comando para receber evento digitado no BD, bindando
