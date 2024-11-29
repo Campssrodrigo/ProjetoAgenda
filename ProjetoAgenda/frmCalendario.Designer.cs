@@ -47,12 +47,12 @@
             // 
             this.FlowLayDias.Location = new System.Drawing.Point(14, 73);
             this.FlowLayDias.Name = "FlowLayDias";
-            this.FlowLayDias.Size = new System.Drawing.Size(1064, 668);
+            this.FlowLayDias.Size = new System.Drawing.Size(1058, 711);
             this.FlowLayDias.TabIndex = 0;
             // 
             // btnAlterior
             // 
-            this.btnAlterior.Location = new System.Drawing.Point(871, 769);
+            this.btnAlterior.Location = new System.Drawing.Point(870, 790);
             this.btnAlterior.Name = "btnAlterior";
             this.btnAlterior.Size = new System.Drawing.Size(75, 23);
             this.btnAlterior.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(977, 769);
+            this.btnProximo.Location = new System.Drawing.Point(976, 790);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(75, 23);
             this.btnProximo.TabIndex = 1;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 814);
+            this.ClientSize = new System.Drawing.Size(1099, 837);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

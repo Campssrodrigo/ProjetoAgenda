@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using ProjetoAgenda.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,18 +81,31 @@ namespace ProjetoAgenda
             MySqlCommand comando = conexao.CreateCommand();
             comando.CommandText = sql;
             // Declarar viriável que receba as informações de data e tranforme com o CultureInfo.InvariantCulture
+            Util teste = new Util();
+            teste.ajustarDatas();
             if (Convert.ToInt32(lblDias.Text) >= 10)
             {
-                comando.Parameters.AddWithValue("data", lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                if(frmCalendario.static_mes >= 10)
+                {
+                    comando.Parameters.AddWithValue("data", lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                }
+                else
+                {
+                    comando.Parameters.AddWithValue("data", lblDias.Text + "/" +0+ frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                }
             }
             else
             {
-                //No display do evento ele ainda trás o valor 13, Criar um método para dar o +1 e -1 em mês e ano?
-                //Outro método só para converter as datas?
-                //Seguir o método ajustarDataPadraoBR(), lá estão todos os lugares que precisam de alteração
-                comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                if(frmCalendario.static_mes < 10)
+                {
+                    comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + 0 + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                }
+                else if(frmCalendario.static_mes >= 10)
+                {
+                    comando.Parameters.AddWithValue("data", 0 + lblDias.Text + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+                }
+                
             }
-
             // Cria um objeto MySqlDataReader para ler os resultados da consulta SQL
             MySqlDataReader reader = comando.ExecuteReader();
 

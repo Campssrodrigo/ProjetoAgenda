@@ -39,7 +39,27 @@ namespace ProjetoAgenda.Classes
             return infoCampoData;
         }
 
+        public void ajustarDatas()
+        {
+            if(frmCalendario.static_mes == 13)
+            {
+                frmCalendario.static_mes = 1;
+                frmCalendario.static_ano += +1;
+            }
+            else if (frmCalendario.static_mes == 0)
+            {
+                frmCalendario.static_mes = 12;
+                frmCalendario.static_ano += -1; 
+            }
+        }
 
+        public string ajustarDatasTexto(string infoCampoData, int dias)
+        {
+            DateTime dataCompleta = Convert.ToDateTime(dias + "/" + frmCalendario.static_mes + "/" + frmCalendario.static_ano);
+            infoCampoData = dataCompleta.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+            return infoCampoData;
+        }
 
 
     }
